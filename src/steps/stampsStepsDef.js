@@ -28,6 +28,8 @@ When(/^I set Serial Number to "C12345"$/, function(){
 
 When(/^I set Mail From ZIP to "94102"$/, function(){
     browser.element("//input[@id='unauthMailFromZip-1048-inputEl']").setValue("94102");
+    const zipCodeField = $("//input[@id='unauthMailFromZip-1048-inputEl']");
+    expect(zipCodeField).toHaveValueContaining('94102');
 });
 
 When(/^I set Mail To Country to "Canada"$/, function(){
