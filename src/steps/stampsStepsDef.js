@@ -24,6 +24,9 @@ When(/^I set Print On to "Stamps"$/, function(){
 
 When(/^I set Serial Number to "C12345"$/, function(){
     browser.element("//input[@id='sdc-mainpanel-nsserialtextfield-inputEl']").setValue("C12345");
+    const serialNumberField = $("//input[@id='sdc-mainpanel-nsserialtextfield-inputEl']");
+    expect(serialNumberField).toHaveValueContaining('C12345');
+
 });
 
 When(/^I set Mail From ZIP to "94102"$/, function(){
