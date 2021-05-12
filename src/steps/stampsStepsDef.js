@@ -32,6 +32,8 @@ When(/^I set Mail From ZIP to "94102"$/, function(){
 
 When(/^I set Mail To Country to "Canada"$/, function(){
     browser.element("//input[@name='ShipCountryCode']").setValue("Canada");
+    const countryCodeField = $('[name="ShipCountryCode"]');
+    expect(countryCodeField).toHaveValueContaining('Canada');
 });
 
 When(/^When I set Weight lbs to "1" and oz to "1"$/, function(){
